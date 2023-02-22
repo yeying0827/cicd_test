@@ -11,9 +11,9 @@ jobs:
       - name: 迁出代码
         uses: actions/checkout@main
       - name: 安装Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2.5.1
         with:
-          node-version: 14.7.6
+          node-version: "14.7.6"
       - name: 安装依赖
         run: npm install
       - name: 打包
