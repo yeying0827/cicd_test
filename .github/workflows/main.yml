@@ -1,0 +1,20 @@
+name: 打包应用的actions
+on: 
+  push: # 监听代码时间
+    branches: 
+      - main # main分支推送就激活此action
+jobs:
+  build:
+    # runs-on 操作系统
+    runs-on: ubuntu-latest
+    steps:
+      - name: 迁出代码
+        uses: actions/checkout@main
+      - name: 安装Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.7.6
+      - name: 安装依赖
+        run: npm install
+      - name: 打包
+        run: npm run build
